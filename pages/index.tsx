@@ -16,13 +16,13 @@ const style = {
   details: `text-lg text-center text=[#282b2f] font-semibold mt-4`,
 }
 
-
 const Home: NextPage = () => {
   const { address, connectWallet } = useWeb3()
 
-  const welcomeUser = (userName = "", toastHandler = toast) => {
+
+  const welcomeUser = (userName = '', toastHandler = toast) => {
     toastHandler.success(
-      `Welcome back ${userName === 'Unnamed' ? `${userName}` : ''}`,
+      `Welcome back ${userName === 'Ville' ? `${userName}` : ''}`,
       {
         style: {
           background: '#04111d',
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       const userDoc = {
         _type: 'users',
         _id: address,
-        userName: 'Unnamed',
+        userName: 'Ville',
         walletAddress: address,
       }
       const result = await client.createIfNotExists(userDoc)
@@ -48,10 +48,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={style.wrapper}>
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-      />
+      <Toaster position="top-center" reverseOrder={false} />
       {address ? (
         <>
           <Header />
@@ -66,7 +63,7 @@ const Home: NextPage = () => {
             Connect Wallet
           </button>
           <div className={style.details}>
-            You need Chrome to be <br /> able to run this app
+            You need Chrome to be able to run this app
           </div>
         </div>
       )}
