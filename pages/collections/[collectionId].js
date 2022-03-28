@@ -15,13 +15,13 @@ import { HiDotsVertical } from 'react-icons/hi'
 
 
 const style = {
-  bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center`,
+  bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center mt-2`,
   bannerImage: `w-full object-cover`,
   infoContainer: `w-screen px-4`,
   midRow: `w-full flex justify-center text-white`,
   endRow: `w-full flex justify-end text-white`,
   profileImg: `w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-4rem]`,
-  socialIconsContainer: `flex text-3xl mb-[-2rem] mr-5`,
+  socialIconsContainer: `flex text-3xl mb-[-2rem] mr-2`,
   socialIconsWrapper: `w-44`,
   socialIconsContent: `flex container justify-between text-[1.4rem] border-2 rounded-lg px-2`,
   socialIcon: `my-2`,
@@ -47,7 +47,7 @@ const Collection = () => {
   const [nfts, setNfts] = useState([])
   const [listings, setListings] = useState([])
 
-  
+
   const nftModule = useMemo(() => {
     if (!provider) return
 
@@ -98,9 +98,6 @@ const Collection = () => {
     }`
 
     const collectionData = await sanityClient.fetch(query)
-
-    console.log(collectionData)
-
     await setCollection(collectionData[0])
   }
 
@@ -108,6 +105,7 @@ const Collection = () => {
     fetchCollectionData()
   }, [collectionId])
 
+  
   return (
     <div className="overflow-hidden">
       <Header />
@@ -116,7 +114,7 @@ const Collection = () => {
           src={
             collection?.bannerImageUrl
               ? collection.bannerImageUrl
-              : 'https://via.placeholder.com/200'
+              : 'https://www.thewindowsclub.com/wp-content/uploads/2021/03/Etherium.png'
           }
           alt="Banner"
         />
@@ -128,7 +126,7 @@ const Collection = () => {
             src={
               collection?.imageUrl
                 ? collection.imageUrl
-                : 'https://via.placeholder.com/200'
+                : 'https://ipfs.thirdweb.com/ipfs/QmXc3Pf13GVp7eceyhcdMSRzV1ui9y7cLz2EeswywKK9oY/0.png'
             }
             alt="Profile image"
           />
@@ -182,7 +180,7 @@ const Collection = () => {
               <div className={style.statValue}>
                 <img
                   className={style.ethLogo}
-                  src="https://avatars.githubusercontent.com/u/38262884?v=4"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"
                   alt="ETH logo"
                 />
                 8{/* {collection?.floorPrice} */}
@@ -193,7 +191,7 @@ const Collection = () => {
               <div className={style.statValue}>
                 <img
                   className={style.ethLogo}
-                  src="https://avatars.githubusercontent.com/u/38262884?v=4"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"
                   alt="ETH logo"
                 />
                 800
