@@ -21,20 +21,19 @@ const style = {
   likeIcon: `text-xl mr-2`,
 }
 
-
 const NFTCard = ({ nftItem, title, listings }) => {
   const [isListed, setIsListed] = useState(false)
   const [price, setPrice] = useState(0)
 
+  
   useEffect(() => {
     const listing = listings.find((listing) => listing.asset.id === nftItem.id)
 
-    if(Boolean(listing)) {
+    if (Boolean(listing)) {
       setIsListed(true)
       setPrice(listing.buyoutCurrencyValuePerToken.displayValue)
     }
   }, [listings])
-
 
   return (
     <div
@@ -72,7 +71,7 @@ const NFTCard = ({ nftItem, title, listings }) => {
         <div className={style.likes}>
           <span className={style.likeIcon}>
             <BiHeart />
-          </span>{' '}
+          </span>
           {nftItem.likes}
         </div>
       </div>

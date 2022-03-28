@@ -17,7 +17,6 @@ const style = {
   detailsContainer: `flex-[2] ml-10`,
 }
 
-
 const Nft = () => {
   const { provider } = useWeb3()
   const router = useRouter()
@@ -45,7 +44,7 @@ const Nft = () => {
     })()
   }, [nftModule])
 
-
+  
   const marketPlaceModule = useMemo(() => {
     if (!provider) return
 
@@ -63,7 +62,6 @@ const Nft = () => {
     })()
   }, [marketPlaceModule])
 
-  
   return (
     <div>
       <Header />

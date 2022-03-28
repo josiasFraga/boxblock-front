@@ -15,7 +15,6 @@ const style = {
   infoIcon: `flex justify-end items-center flex-1 text-[#8a939b] text-3xl font-bold`,
 }
 
-
 const Hero = () => {
   return (
     <div className={style.wrapper}>

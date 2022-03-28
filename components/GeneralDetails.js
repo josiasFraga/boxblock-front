@@ -20,7 +20,6 @@ const style = {
   divider: `border-r-2`,
 }
 
-
 const GeneralDetails = ({ selectedNft }) => {
   return (
     <div className={style.wrapper}>

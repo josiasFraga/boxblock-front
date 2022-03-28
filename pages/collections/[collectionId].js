@@ -36,7 +36,6 @@ const style = {
   description: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4`,
 }
 
-
 const Collection = () => {
   const router = useRouter()
   const { provider } = useWeb3()
@@ -83,7 +82,7 @@ const Collection = () => {
     })()
   }, [marketPlaceModule])
 
-
+  
   const fetchCollectionData = async (sanityClient = client) => {
     const query = `*[_type == "marketItems" && contractAddress == "${collectionId}" ] {
       "imageUrl": profileImage.asset->url,
@@ -105,7 +104,6 @@ const Collection = () => {
     fetchCollectionData()
   }, [collectionId])
 
-  
   return (
     <div className="overflow-hidden">
       <Header />

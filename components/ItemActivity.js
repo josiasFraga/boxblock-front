@@ -21,7 +21,6 @@ const style = {
   accent: `text-[#2081e2]`,
 }
 
-
 const ItemActivity = () => {
   const [toggle, setToggle] = useState(true)
 
@@ -43,8 +42,7 @@ const ItemActivity = () => {
           <div className={style.filter}>
             <div className={style.filterTitle}>Filter</div>
             <div className={style.filterIcon}>
-              {' '}
-              <AiOutlineDown />{' '}
+              <AiOutlineDown />
             </div>
           </div>
           <div className={style.tableHeader}>
