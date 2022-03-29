@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
+import toast, { Toaster } from 'react-hot-toast'
+
 import { HiTag } from 'react-icons/hi'
 import { IoMdWallet } from 'react-icons/io'
-
-import toast, { Toaster } from 'react-hot-toast'
 
 
 const style = {
