@@ -7,7 +7,7 @@ import { IoMdWallet } from 'react-icons/io'
 
 
 const style = {
-  button: `mr-8 flex items-center py-2 px-12 rounded-lg cursor-pointer`,
+  button: `flex mr-8 items-center py-2 px-12 rounded-lg cursor-pointer border border-black`,
   buttonIcon: `text-xl`,
   buttonText: `ml-2 text-lg font-semibold`,
 }
@@ -49,7 +49,7 @@ const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
   }
 
   return (
-    <div className="flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12">
+    <div className="flex h-20 w-full items-center rounded-lg">
       <Toaster position="top-center" reverseOrder={false} />
       {isListed === 'true' ? (
         <>

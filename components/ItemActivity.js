@@ -8,7 +8,7 @@ import EventItem from './EventItem.js'
 
 
 const style = {
-  wrapper: `w-full mt-8 border border-[#151b22] rounded-xl bg-[#303339] overflow-hidden`,
+  wrapper: `w-full mt-8 border border-[#151b22] rounded-xl bg-[#303339] overflow-hidden mt-10`,
   title: `bg-[#262b2f] px-6 py-4 flex items-center`,
   titleLeft: `flex-1 flex items-center text-xl font-bold`,
   titleIcon: `text-3xl mr-2`,

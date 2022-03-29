@@ -12,8 +12,8 @@ import Hero from '../components/Hero.js'
 const style = {
   wrapper: ``,
   walletConnectWrapper: `flex flex-col justify-center items-center h-screen w-screen bg-[#3b3d42] `,
-  button: `border border-[#282b2f] bg-[#2081e2] p-[0.8rem] text-xl font-semibold rounded-lg cursor-pointer text-black`,
-  details: `text-lg text-center text=[#282b2f] font-semibold mt-4`,
+  button: `bg-[#2081e2] p-[0.8rem] text-lg font-semibold rounded-lg cursor-pointer text-black`,
+  details: `text-lg text-center text-white font-semibold mt-4`,
 }
 
 const Home: NextPage = () => {
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={style.wrapper}>
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="bottom-center" reverseOrder={false} />
       {address ? (
         <>
           <Header />
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
             Connect Wallet
           </button>
           <div className={style.details}>
-            You need Chrome to be able to run this app
+            You need chrome to be able to run this app
           </div>
         </div>
       )}
