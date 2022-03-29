@@ -21,4 +21,4 @@ Opensea clone w/ reactjs, nextjs, sanity, web3, tailwind css and metamask
 
 ![App Screenshot](https://i.postimg.cc/sg470B1y/2022-03-29-10-08-16.png)
 
-![App Screenshot](https://i.postimg.cc/5285878P/2022-03-29-10-27-49.png)
+![App Screenshot](https://i.postimg.cc/2yzKV0TJ/2022-03-29-12-07-30.png)
