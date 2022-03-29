@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'next/link'
+
 import { useRouter } from 'next/router'
 import { useWeb3 } from '@3rdweb/hooks'
 import { ThirdwebSDK } from '@3rdweb/sdk'
@@ -13,30 +13,12 @@ import { CgWebsite } from 'react-icons/cg'
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
 
+import { style } from './styles.js'
 
-const style = {
-  bannerImageContainer: `h-[20vh] w-screen overflow-hidden flex justify-center items-center mt-2`,
-  bannerImage: `w-full object-cover`,
-  infoContainer: `w-screen px-4`,
-  midRow: `w-full flex justify-center text-white`,
-  endRow: `w-full flex justify-end text-white`,
-  profileImg: `w-40 h-40 object-cover rounded-full border-2 border-[#202225] mt-[-4rem]`,
-  socialIconsContainer: `flex text-3xl mb-[-2rem] mr-2`,
-  socialIconsWrapper: `w-44`,
-  socialIconsContent: `flex container justify-between text-[1.4rem] border-2 rounded-lg px-2`,
-  socialIcon: `my-2`,
-  divider: `border-r-2`,
-  title: `text-5xl font-bold mb-4`,
-  createdBy: `text-lg mb-4`,
-  statsContainer: `w-[44vw] flex justify-between py-4 border border-[#151b22] rounded-xl mb-4`,
-  collectionStat: `w-1/4`,
-  statValue: `text-3xl font-bold w-full flex items-center justify-center`,
-  ethLogo: `h-6 mr-2`,
-  statName: `text-lg w-full text-center mt-1`,
-  description: `text-[#8a939b] text-xl w-max-1/4 flex-wrap mt-4`,
-}
 
 const Collection = () => {
+  const ethImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png'
+
   const router = useRouter()
   const { provider } = useWeb3()
 
@@ -68,11 +50,11 @@ const Collection = () => {
   const marketPlaceModule = useMemo(() => {
     if (!provider) return
 
-    const market = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
+    const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
     const url = 'https://rinkeby.infura.io/v3/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
     const sdk = new ThirdwebSDK(provider.getSigner(), url)
-    return sdk.getMarketplaceModule(market)
+    return sdk.getMarketplaceModule(marketAddr)
   }, [provider])
 
   useEffect(() => {
@@ -154,7 +136,7 @@ const Collection = () => {
         </div>
         <div className={style.midRow}>
           <div className={style.createdBy}>
-            Created by{' '}
+            Created by {' '}
             <span className="text-[#2081e2]">
               Ville Pakarinen
               {/* {collection?.creator} */}
@@ -178,10 +160,11 @@ const Collection = () => {
               <div className={style.statValue}>
                 <img
                   className={style.ethLogo}
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"
+                  src={ethImg}
                   alt="ETH logo"
                 />
-                8{/* {collection?.floorPrice} */}
+                8
+                {/* {collection?.floorPrice} */}
               </div>
               <div className={style.statName}>floor price</div>
             </div>
@@ -189,7 +172,7 @@ const Collection = () => {
               <div className={style.statValue}>
                 <img
                   className={style.ethLogo}
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"
+                  src={ethImg}
                   alt="ETH logo"
                 />
                 800

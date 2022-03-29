@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
+
 import { useWeb3 } from '@3rdweb/hooks'
 import { ThirdwebSDK } from '@3rdweb/sdk'
 import { useRouter } from 'next/router'
@@ -8,14 +9,8 @@ import NFTImage from '../../components/NFTImage.js'
 import GeneralDetails from '../../components/GeneralDetails.js'
 import ItemActivity from '../../components/ItemActivity.js'
 
+import { style } from './styles.js';
 
-const style = {
-  wrapper: `flex flex-col items-center container-lg text-[#e5e8eb]`,
-  container: `container p-6`,
-  topContent: `flex`,
-  nftImgContainer: `flex-1 mr-4`,
-  detailsContainer: `flex-[2] ml-10`,
-}
 
 const Nft = () => {
   const { provider } = useWeb3()
@@ -28,11 +23,11 @@ const Nft = () => {
   const nftModule = useMemo(() => {
     if (!provider) return
 
-    const market = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
+    const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
     const url = 'https://rinkeby.infura.io/v3/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
     const sdk = new ThirdwebSDK(provider.getSigner(), url)
-    return sdk.getNFTModule(market)
+    return sdk.getNFTModule(marketAddr)
   }, [provider])
 
   useEffect(() => {
@@ -48,11 +43,11 @@ const Nft = () => {
   const marketPlaceModule = useMemo(() => {
     if (!provider) return
 
-    const market = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
+    const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
     const url = 'https://rinkeby.infura.io/v3/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
     const sdk = new ThirdwebSDK(provider.getSigner(), url)
-    return sdk.getMarketplaceModule(market)
+    return sdk.getMarketplaceModule(marketAddr)
   }, [provider])
 
   useEffect(() => {
