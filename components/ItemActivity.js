@@ -22,7 +22,7 @@ const style = {
 }
 
 const ItemActivity = () => {
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(false)
 
   return (
     <div className={style.wrapper}>
