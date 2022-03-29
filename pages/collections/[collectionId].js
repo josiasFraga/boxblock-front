@@ -32,9 +32,7 @@ const Collection = () => {
   const nftModule = useMemo(() => {
     if (!provider) return
 
-    const url = 'https://rinkeby.infura.io/v3/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
-
-    const sdk = new ThirdwebSDK(provider.getSigner(), url)
+    const sdk = new ThirdwebSDK(provider.getSigner())
     return sdk.getNFTModule(collectionId)
   }, [provider])
 
@@ -51,9 +49,8 @@ const Collection = () => {
     if (!provider) return
 
     const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-    const url = 'https://rinkeby.infura.io/v3/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
-    const sdk = new ThirdwebSDK(provider.getSigner(), url)
+    const sdk = new ThirdwebSDK(provider.getSigner())
     return sdk.getMarketplaceModule(marketAddr)
   }, [provider])
 

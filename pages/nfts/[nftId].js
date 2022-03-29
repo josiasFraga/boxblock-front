@@ -8,8 +8,9 @@ import Header from '../../components/Header.js'
 import NFTImage from '../../components/NFTImage.js'
 import GeneralDetails from '../../components/GeneralDetails.js'
 import ItemActivity from '../../components/ItemActivity.js'
+import Purchase from '../../components/Purchase.js'
 
-import { style } from './styles.js';
+import { style } from './styles.js'
 
 
 const Nft = () => {
@@ -23,11 +24,10 @@ const Nft = () => {
   const nftModule = useMemo(() => {
     if (!provider) return
 
-    const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-    const url = 'https://rinkeby.infura.io/v3/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
+    const NftAddr = '0x0872556dbe86EB0acd7c7eA8b887c1B490d6f91b'
 
-    const sdk = new ThirdwebSDK(provider.getSigner(), url)
-    return sdk.getNFTModule(marketAddr)
+    const sdk = new ThirdwebSDK(provider.getSigner())
+    return sdk.getNFTModule(NftAddr)
   }, [provider])
 
   useEffect(() => {
@@ -39,14 +39,13 @@ const Nft = () => {
     })()
   }, [nftModule])
 
-  
+
   const marketPlaceModule = useMemo(() => {
     if (!provider) return
 
     const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-    const url = 'https://rinkeby.infura.io/v3/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
-    const sdk = new ThirdwebSDK(provider.getSigner(), url)
+    const sdk = new ThirdwebSDK(provider.getSigner())
     return sdk.getMarketplaceModule(marketAddr)
   }, [provider])
 
@@ -68,6 +67,12 @@ const Nft = () => {
             </div>
             <div className={style.detailsContainer}>
               <GeneralDetails selectedNft={selectedNft} />
+              <Purchase
+                isListed={router.query.isListed}
+                selectedNft={selectedNft}
+                listings={listings}
+                marketPlaceModule={marketPlaceModule}
+              />
             </div>
           </div>
           <ItemActivity />
