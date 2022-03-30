@@ -31,6 +31,7 @@ const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
     setEnableButton(true)
   })
 
+  
   const confirmPurchase = (toastHandler = toast) =>
     toastHandler.success(`Purchase successful`, {
       style: {

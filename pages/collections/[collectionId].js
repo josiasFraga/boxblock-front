@@ -17,15 +17,16 @@ import { style } from './styles.js'
 
 
 const Collection = () => {
-  const ethImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png'
+  const ethImg =
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png'
 
   const router = useRouter()
   const { provider } = useWeb3()
 
   const { collectionId } = router.query
 
-  const [collection, setCollection] = useState({})
   const [nfts, setNfts] = useState([])
+  const [collection, setCollection] = useState({})
   const [listings, setListings] = useState([])
 
 
@@ -49,8 +50,8 @@ const Collection = () => {
     if (!provider) return
 
     const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-
     const sdk = new ThirdwebSDK(provider.getSigner())
+
     return sdk.getMarketplaceModule(marketAddr)
   }, [provider])
 
@@ -61,7 +62,7 @@ const Collection = () => {
     })()
   }, [marketPlaceModule])
 
-  
+
   const fetchCollectionData = async (sanityClient = client) => {
     const query = `*[_type == "marketItems" && contractAddress == "${collectionId}" ] {
       "imageUrl": profileImage.asset->url,
@@ -74,9 +75,9 @@ const Collection = () => {
       "allOwners": owners[]->,
       description
     }`
-
+    
     const collectionData = await sanityClient.fetch(query)
-    await setCollection(collectionData[0])
+    setCollection(collectionData[0])
   }
 
   useEffect(() => {
@@ -133,7 +134,7 @@ const Collection = () => {
         </div>
         <div className={style.midRow}>
           <div className={style.createdBy}>
-            Created by {' '}
+            Created by{' '}
             <span className="text-[#2081e2]">
               Ville Pakarinen
               {/* {collection?.creator} */}
@@ -155,23 +156,14 @@ const Collection = () => {
             </div>
             <div className={style.collectionStat}>
               <div className={style.statValue}>
-                <img
-                  className={style.ethLogo}
-                  src={ethImg}
-                  alt="ETH logo"
-                />
-                8
+                <img className={style.ethLogo} src={ethImg} alt="ETH logo" />8
                 {/* {collection?.floorPrice} */}
               </div>
               <div className={style.statName}>floor price</div>
             </div>
             <div className={style.collectionStat}>
               <div className={style.statValue}>
-                <img
-                  className={style.ethLogo}
-                  src={ethImg}
-                  alt="ETH logo"
-                />
+                <img className={style.ethLogo} src={ethImg} alt="ETH logo" />
                 800
                 {/* {collection?.volumeTraded}.5K */}
               </div>
