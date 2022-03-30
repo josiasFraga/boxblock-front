@@ -20,6 +20,8 @@ const Nft = () => {
   const [selectedNft, setSelectedNft] = useState()
   const [listings, setListings] = useState([])
 
+  console.log(selectedNft);
+
 
   const nftModule = useMemo(() => {
     if (!provider) return
