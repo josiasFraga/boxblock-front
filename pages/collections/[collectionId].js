@@ -33,12 +33,15 @@ const Collection = () => {
   const nftModule = useMemo(() => {
     if (!provider) return
 
-    const sdk = new ThirdwebSDK(provider.getSigner())
+    const url = 'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
+
+    const sdk = new ThirdwebSDK(provider.getSigner(), url)
     return sdk.getNFTModule(collectionId)
   }, [provider])
 
   useEffect(() => {
     if (!nftModule) return
+    
     ;(async () => {
       const nfts = await nftModule.getAll()
       setNfts(nfts)
@@ -50,8 +53,9 @@ const Collection = () => {
     if (!provider) return
 
     const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-    const sdk = new ThirdwebSDK(provider.getSigner())
+    const url = 'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
+    const sdk = new ThirdwebSDK(provider.getSigner(), url)
     return sdk.getMarketplaceModule(marketAddr)
   }, [provider])
 
@@ -156,7 +160,8 @@ const Collection = () => {
             </div>
             <div className={style.collectionStat}>
               <div className={style.statValue}>
-                <img className={style.ethLogo} src={ethImg} alt="ETH logo" />8
+                <img className={style.ethLogo} src={ethImg} alt="ETH logo" />
+                8
                 {/* {collection?.floorPrice} */}
               </div>
               <div className={style.statName}>floor price</div>
