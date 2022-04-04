@@ -12,6 +12,8 @@ Opensea clone w/ reactjs, nextjs, sanity, web3, tailwind css and metamask
 
 **Server:** Node, Sanity, Web3, Metamask
 
+❗token and network address are just examples and not work
+
 
 ## Screenshots
 
