@@ -5,17 +5,12 @@ import toast, { Toaster } from 'react-hot-toast'
 import { HiTag } from 'react-icons/hi'
 import { IoMdWallet } from 'react-icons/io'
 
+import { style } from './Purchase.style.js'
 
-const style = {
-  button: `flex mr-8 items-center py-2 px-12 rounded-lg cursor-pointer border border-black`,
-  buttonIcon: `text-xl`,
-  buttonText: `ml-2 text-lg font-semibold`,
-}
 
 const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
   const [selectedMarketNft, setSelectedMarketNft] = useState()
   const [enableButton, setEnableButton] = useState(false)
-
 
   useEffect(() => {
     if (!listings || isListed === 'false') return
@@ -31,7 +26,6 @@ const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
     setEnableButton(true)
   })
 
-  
   const confirmPurchase = (toastHandler = toast) =>
     toastHandler.success(`Purchase successful`, {
       style: {

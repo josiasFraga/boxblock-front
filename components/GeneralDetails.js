@@ -4,21 +4,8 @@ import { RiShareBoxLine } from 'react-icons/ri'
 import { FiMoreVertical } from 'react-icons/fi'
 import { GiShare } from 'react-icons/gi'
 
+import { style } from './GeneralDetails.style.js'
 
-const style = {
-  wrapper: `flex`,
-  infoContainer: `h-36 flex flex-col flex-1 justify-between mb-6`,
-  accent: `text-[#2081e2]`,
-  nftTitle: `text-2xl font-extrabold`,
-  otherInfo: `flex`,
-  ownedBy: `text-[#8a939b] mr-4`,
-  likes: `flex items-center text-[#8a939b]`,
-  likeIcon: `mr-1`,
-  actionButtonsContainer: `w-44`,
-  actionButtons: `flex container justify-between text-[1.4rem] border-2 rounded-lg ml-10`,
-  actionButton: `my-2`,
-  divider: `border-r-2`,
-}
 
 const GeneralDetails = ({ selectedNft }) => {
   return (
@@ -31,7 +18,10 @@ const GeneralDetails = ({ selectedNft }) => {
         </div>
         <div className={style.otherInfo}>
           <div className={style.ownedBy}>
-            Owned By <span className={style.accent}>Ville Pakarinen</span>
+            Owned By 
+            <span className={style.accent}>{' '}
+              Ville Pakarinen
+            </span>
           </div>
           <div className={style.likes}>
             <AiFillHeart className={style.likeIcon} /> 2.3K favorites
