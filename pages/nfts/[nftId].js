@@ -14,18 +14,19 @@ import { style } from './styles.js'
 
 
 const Nft = () => {
-  const { provider } = useWeb3()
-  const router = useRouter()
-
   const [selectedNft, setSelectedNft] = useState()
   const [listings, setListings] = useState([])
 
-  
+  const router = useRouter()
+  const { provider } = useWeb3()
+
+
   const nftModule = useMemo(() => {
     if (!provider) return
 
     const NftAddr = '0x0872556dbe86EB0acd7c7eA8b887c1B490d6f91b'
-    const url = 'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
+    const url =
+      'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
     const sdk = new ThirdwebSDK(provider.getSigner(), url)
     return sdk.getNFTModule(NftAddr)
@@ -33,11 +34,9 @@ const Nft = () => {
 
   useEffect(() => {
     if (!nftModule) return
-    
     ;(async () => {
       const nfts = await nftModule.getAll()
       const selectedNftItem = nfts.find((nft) => nft.id === router.query.nftId)
-      
       setSelectedNft(selectedNftItem)
     })()
   }, [nftModule])
@@ -47,7 +46,8 @@ const Nft = () => {
     if (!provider) return
 
     const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-    const url = 'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
+    const url =
+      'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
     const sdk = new ThirdwebSDK(provider.getSigner(), url)
     return sdk.getMarketplaceModule(marketAddr)
@@ -55,7 +55,6 @@ const Nft = () => {
 
   useEffect(() => {
     if (!marketPlaceModule) return
-
     ;(async () => {
       setListings(await marketPlaceModule.getAllListings())
     })()

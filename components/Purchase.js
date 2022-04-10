@@ -14,6 +14,7 @@ const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
 
   useEffect(() => {
     if (!listings || isListed === 'false') return
+
     ;(async () => {
       setSelectedMarketNft(
         listings.find((marketNft) => marketNft.asset?.id === selectedNft.id)
@@ -23,11 +24,12 @@ const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
 
   useEffect(() => {
     if (!selectedMarketNft || !selectedNft) return
+    
     setEnableButton(true)
-  })
+  }, [selectedMarketNft, selectedNft])
 
   const confirmPurchase = (toastHandler = toast) =>
-    toastHandler.success(`Purchase successful`, {
+    toastHandler.success(`Purchase successful!`, {
       style: {
         background: '#04111d',
         color: '#fff',
@@ -39,13 +41,19 @@ const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
     quantityDesired = 1,
     module = marketPlaceModule
   ) => {
-    await module.buyoutDirectListing({ listingId, quantityDesired })
+    await module
+      .buyoutDirectListing({
+        listingId: listingId,
+        quantityDesired: quantityDesired,
+      })
+      .catch((error) => console.error(error))
+
     confirmPurchase()
   }
 
   return (
-    <div className="flex h-20 w-full items-center rounded-lg">
-      <Toaster position="top-center" reverseOrder={false} />
+    <div className="flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12">
+      <Toaster position="bottom-left" reverseOrder={false} />
       {isListed === 'true' ? (
         <>
           <div

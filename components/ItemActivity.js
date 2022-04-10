@@ -10,7 +10,7 @@ import { style } from './ItemActivity.style.js'
 
 
 const ItemActivity = () => {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(true)
 
   return (
     <div className={style.wrapper}>
@@ -30,7 +30,8 @@ const ItemActivity = () => {
           <div className={style.filter}>
             <div className={style.filterTitle}>Filter</div>
             <div className={style.filterIcon}>
-              <AiOutlineDown />
+              {' '}
+              <AiOutlineDown />{' '}
             </div>
           </div>
           <div className={style.tableHeader}>
@@ -40,9 +41,9 @@ const ItemActivity = () => {
             <div className={`${style.tableHeaderElement} flex-[3]`}>To</div>
             <div className={`${style.tableHeaderElement} flex-[2]`}>Date</div>
           </div>
-          {dummyEvents.map((event, id) => {
-            return <EventItem key={id} event={event} />
-          })}
+          {dummyEvents.map((event, id) => (
+            <EventItem key={id} event={event} />
+          ))}
         </div>
       )}
     </div>

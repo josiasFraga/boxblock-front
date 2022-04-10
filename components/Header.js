@@ -25,12 +25,12 @@ const Header = () => {
         </div>
         <input
           className={style.searchInput}
-          placeholder="Search items, collections and accounts..."
+          placeholder="Search items, collections, and accounts"
         />
       </div>
       <div className={style.headerItems}>
         <Link href="/collections/0x0872556dbe86EB0acd7c7eA8b887c1B490d6f91b">
-          <div className={style.headerItem}>Collections</div>
+          <div className={style.headerItem}> Collections </div>
         </Link>
         <div className={style.headerItem}>Stats</div>
         <div className={style.headerItem}>Resources</div>

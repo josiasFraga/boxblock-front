@@ -13,27 +13,25 @@ import { CgWebsite } from 'react-icons/cg'
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
 
+
 import { style } from './styles.js'
 
-
 const Collection = () => {
-  const ethImg =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png'
-
   const router = useRouter()
-  const { provider } = useWeb3()
 
   const { collectionId } = router.query
+  const { provider } = useWeb3()
 
-  const [nfts, setNfts] = useState([])
-  const [collection, setCollection] = useState({})
   const [listings, setListings] = useState([])
+  const [collection, setCollection] = useState({})
+  const [nfts, setNfts] = useState([])
 
 
   const nftModule = useMemo(() => {
     if (!provider) return
 
-    const url = 'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
+    const url =
+      'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
     const sdk = new ThirdwebSDK(provider.getSigner(), url)
     return sdk.getNFTModule(collectionId)
@@ -41,7 +39,6 @@ const Collection = () => {
 
   useEffect(() => {
     if (!nftModule) return
-    
     ;(async () => {
       const nfts = await nftModule.getAll()
       setNfts(nfts)
@@ -53,7 +50,8 @@ const Collection = () => {
     if (!provider) return
 
     const marketAddr = '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
-    const url = 'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
+    const url =
+      'https://eth-rinkeby.alchemyapi.io/v2/BGCbYsNijEj8yuoqWm6Srd8ybug3zlzi'
 
     const sdk = new ThirdwebSDK(provider.getSigner(), url)
     return sdk.getMarketplaceModule(marketAddr)
@@ -79,9 +77,9 @@ const Collection = () => {
       "allOwners": owners[]->,
       description
     }`
-    
+
     const collectionData = await sanityClient.fetch(query)
-    setCollection(collectionData[0])
+    await setCollection(collectionData[0])
   }
 
   useEffect(() => {
@@ -93,12 +91,13 @@ const Collection = () => {
       <Header />
       <div className={style.bannerImageContainer}>
         <img
+          className={style.bannerImage}
           src={
             collection?.bannerImageUrl
               ? collection.bannerImageUrl
-              : 'https://www.thewindowsclub.com/wp-content/uploads/2021/03/Etherium.png'
+              : 'https://via.placeholder.com/200'
           }
-          alt="Banner"
+          alt="banner"
         />
       </div>
       <div className={style.infoContainer}>
@@ -108,9 +107,9 @@ const Collection = () => {
             src={
               collection?.imageUrl
                 ? collection.imageUrl
-                : 'https://ipfs.thirdweb.com/ipfs/QmXc3Pf13GVp7eceyhcdMSRzV1ui9y7cLz2EeswywKK9oY/0.png'
+                : 'https://via.placeholder.com/200'
             }
-            alt="Profile image"
+            alt="profile image"
           />
         </div>
         <div className={style.endRow}>
@@ -120,12 +119,15 @@ const Collection = () => {
                 <div className={style.socialIcon}>
                   <CgWebsite />
                 </div>
+                <div className={style.divider} />
                 <div className={style.socialIcon}>
                   <AiOutlineInstagram />
                 </div>
+                <div className={style.divider} />
                 <div className={style.socialIcon}>
                   <AiOutlineTwitter />
                 </div>
+                <div className={style.divider} />
                 <div className={style.socialIcon}>
                   <HiDotsVertical />
                 </div>
@@ -139,10 +141,7 @@ const Collection = () => {
         <div className={style.midRow}>
           <div className={style.createdBy}>
             Created by{' '}
-            <span className="text-[#2081e2]">
-              Ville Pakarinen
-              {/* {collection?.creator} */}
-            </span>
+            <span className="text-[#2081e2]">{collection?.creator}</span>
           </div>
         </div>
         <div className={style.midRow}>
@@ -153,45 +152,47 @@ const Collection = () => {
             </div>
             <div className={style.collectionStat}>
               <div className={style.statValue}>
-                1
-                {/* {collection?.allOwners ? collection.allOwners.length : ''} */}
+                {collection?.allOwners ? collection.allOwners.length : ''}
               </div>
               <div className={style.statName}>owners</div>
             </div>
             <div className={style.collectionStat}>
               <div className={style.statValue}>
-                <img className={style.ethLogo} src={ethImg} alt="ETH logo" />
-                8
-                {/* {collection?.floorPrice} */}
+                <img
+                  src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
+                  alt="eth"
+                  className={style.ethLogo}
+                />
+                {collection?.floorPrice}
               </div>
               <div className={style.statName}>floor price</div>
             </div>
             <div className={style.collectionStat}>
               <div className={style.statValue}>
-                <img className={style.ethLogo} src={ethImg} alt="ETH logo" />
-                800
-                {/* {collection?.volumeTraded}.5K */}
+                <img
+                  src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
+                  alt="eth"
+                  className={style.ethLogo}
+                />
+                {collection?.volumeTraded}.5K
               </div>
               <div className={style.statName}>volume traded</div>
             </div>
           </div>
         </div>
         <div className={style.midRow}>
-          <div className={style.description}>
-            The Bored Ape Yacht Club is a collection of unique Bored Ape NFTs
-            {/* {collection?.description} */}
-          </div>
+          <div className={style.description}>{collection?.description}</div>
         </div>
-        <div className="flex flex-wrap">
-          {nfts.map((nftItem, id) => (
-            <NFTCard
-              key={id}
-              nftItem={nftItem}
-              title={collection?.title}
-              listings={listings}
-            />
-          ))}
-        </div>
+      </div>
+      <div className="flex flex-wrap ">
+        {nfts.map((nftItem, id) => (
+          <NFTCard
+            key={id}
+            nftItem={nftItem}
+            title={collection?.title}
+            listings={listings}
+          />
+        ))}
       </div>
     </div>
   )

@@ -8,10 +8,10 @@ const Hero = () => {
         <div className={style.contentWrapper}>
           <div className={style.copyContainer}>
             <div className={style.title}>
-              Discover, collect and sell extraordinary NFTs
+              Discover, collect, and sell extraordinary NFTs
             </div>
             <div className={style.description}>
-              Opensea is the world&apos; first and largest NFT marketplace
+              OpenSea is the world&apos;s first and largest NFT marketplace
             </div>
             <div className={style.ctaContainer}>
               <button className={style.accentedButton}>Explore</button>
@@ -21,22 +21,22 @@ const Hero = () => {
           <div className={style.cardContainer}>
             <img
               className="rounded-t-lg"
-              src="https://lh3.googleusercontent.com/C0K1INFhIXcsRwalRPr_3SkYpk_esO039M9veydGwcrrNFks737CZW2ZPKNNpev5oXuS68NbjTQyvw_P7J8-02Otlf5VWXSYMwYJ9w=s550"
-              alt="Man without face"
+              src="https://lh3.googleusercontent.com/ujepnqpnL0nDQIHsWxlCXzyw4pf01yjz1Jmb4kAQHumJAPrSEj0-e3ABMZlZ1HEpJoqwOcY_kgnuJGzfXbd2Tijri66GXUtfN2MXQA=s550"
+              alt=""
             />
             <div className={style.infoContainer}>
               <img
                 className="h-[2.25rem] rounded-full"
-                src="https://lh3.googleusercontent.com/F4vhQWbtsXWrdkeYt189xQWqy5IqIwLo6f7JaMoJXtNlkIuCyWMTyPYgNmPGgmaBrR-AdNirde9MaCFhG9jckHt9FxjHNuuwutXjLw=s80"
-                alt="Man without face"
+                src="https://lh3.googleusercontent.com/qQj55gGIWmT1EnMmGQBNUpIaj0qTyg4YZSQ2ymJVvwr_mXXjuFiHJG9d3MRgj5DVgyLa69u8Tq9ijSm_stsph8YmIJlJQ1e7n6xj=s64"
+                alt=""
               />
               <div className={style.author}>
-                <div className={style.name}>Man Without a Face</div>
+                <div className={style.name}>Jolly</div>
                 <a
                   className="text-[#1868b7]"
-                  href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/10935686519463649066893755243917080523517573366192681490676511568628646150145"
+                  href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/2324922113504035910649522729980423429926362207300810036887725141691069366277"
                 >
-                  SpasiSohrani
+                  hola-kanola
                 </a>
               </div>
             </div>
