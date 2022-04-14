@@ -9,9 +9,9 @@ import NFTCard from '../../components/NFTCard.js'
 
 import { client } from '../../lib/sanityClient.js'
 
-import { CgWebsite } from 'react-icons/cg'
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
+import { CgWebsite } from 'react-icons/cg'
 
 
 import { style } from './styles.js'
@@ -39,6 +39,7 @@ const Collection = () => {
 
   useEffect(() => {
     if (!nftModule) return
+
     ;(async () => {
       const nfts = await nftModule.getAll()
       setNfts(nfts)
@@ -59,6 +60,7 @@ const Collection = () => {
 
   useEffect(() => {
     if (!marketPlaceModule) return
+
     ;(async () => {
       setListings(await marketPlaceModule.getAllListings())
     })()
@@ -79,7 +81,7 @@ const Collection = () => {
     }`
 
     const collectionData = await sanityClient.fetch(query)
-    await setCollection(collectionData[0])
+    setCollection(collectionData[0])
   }
 
   useEffect(() => {

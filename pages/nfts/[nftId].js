@@ -34,6 +34,7 @@ const Nft = () => {
 
   useEffect(() => {
     if (!nftModule) return
+    
     ;(async () => {
       const nfts = await nftModule.getAll()
       const selectedNftItem = nfts.find((nft) => nft.id === router.query.nftId)

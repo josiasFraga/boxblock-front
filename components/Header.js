@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
-import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
 
 import openSeaLogo from '../assets/images/opensea.png'
 

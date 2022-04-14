@@ -1,8 +1,9 @@
 import { AiFillHeart } from 'react-icons/ai'
 import { MdRefresh } from 'react-icons/md'
+import { GiShare } from 'react-icons/gi'
+
 import { RiShareBoxLine } from 'react-icons/ri'
 import { FiMoreVertical } from 'react-icons/fi'
-import { GiShare } from 'react-icons/gi'
 
 import { style } from './GeneralDetails.style.js'
 

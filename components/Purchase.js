@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-
 import toast, { Toaster } from 'react-hot-toast'
 
 import { HiTag } from 'react-icons/hi'
@@ -12,6 +11,7 @@ const Purchase = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
   const [selectedMarketNft, setSelectedMarketNft] = useState()
   const [enableButton, setEnableButton] = useState(false)
 
+  
   useEffect(() => {
     if (!listings || isListed === 'false') return
 
