@@ -3,9 +3,6 @@
 
 Opensea clone w/ reactjs, nextjs, sanity, web3, tailwind css and metamask
 
-**Credits:** Clever Programmer
-
-
 ## Tech Stack
 
 **Client:** React, Next JS, Tailwind CSS
