@@ -9,8 +9,6 @@ Opensea clone w/ reactjs, nextjs, sanity, web3, tailwind css and metamask
 
 **Server:** Node, Sanity, Web3, Metamask
 
-✅ finished working project
-
 
 ## Screenshots
 
