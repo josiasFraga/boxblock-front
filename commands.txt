@@ -1,0 +1,14 @@
+deploy
+npx hardhat run --network localhost scripts/deploy.js
+
+testes
+npx hardhat test
+
+sanity
+sanity start
+
+node
+npx hardhat node
+
+start
+sudo npm run dev

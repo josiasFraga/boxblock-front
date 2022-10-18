@@ -1,7 +1,7 @@
 
-# Opensea Clone
+# BoxBlock
 
-Opensea clone w/ reactjs, nextjs, sanity, web3, tailwind css and metamask
+BoxBlock clone w/ reactjs, nextjs, sanity, web3, tailwind css and metamask
 
 ## Tech Stack
 
@@ -9,13 +9,42 @@ Opensea clone w/ reactjs, nextjs, sanity, web3, tailwind css and metamask
 
 **Server:** Node, Sanity, Web3, Metamask
 
+npm install sanity -g @sanity/cli
+mkdir studio
+cd studio
+sanity init
+sanity start
 
-## Screenshots
+# Hardhat
 
-![App Screenshot](https://i.postimg.cc/SNHp0QTv/2022-03-29-16-26-28.png)
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+npx hardhat help
+REPORT_GAS=true npx hardhat test
+npx hardhat coverage
+npx hardhat run scripts/deploy.js
+node scripts/deploy.js
+npx eslint '**/*.js'
+npx eslint '**/*.js' --fix
+npx prettier '**/*.{json,sol,md}' --check
+npx prettier '**/*.{json,sol,md}' --write
+npx solhint 'contracts/**/*.sol'
+npx solhint 'contracts/**/*.sol' --fix
 
-![App Screenshot](https://i.postimg.cc/L6gVwpq3/2022-03-28-08-41-46.png)
 
-![App Screenshot](https://i.postimg.cc/sg470B1y/2022-03-29-10-08-16.png)
+# Sample Hardhat Project
 
-![App Screenshot](https://i.postimg.cc/RCTxWN5c/2022-04-03-13-59-58.png)
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.js
+```

@@ -1,7 +1,6 @@
 import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-
 export default createSchema({
   name: 'default',
 
@@ -24,76 +23,204 @@ export default createSchema({
         {
           name: 'profileImage',
           title: 'Profile Image',
-          type: 'image',
+          type: 'string',
         },
         {
           name: 'bannerImage',
           title: 'Banner Image',
-          type: 'image',
+          type: 'string',
         },
         {
           name: 'twitterHandle',
-          title: 'Twitter Handle',
+          title: 'Twitter',
           type: 'string',
         },
         {
           name: 'igHandle',
-          title: 'Instagram Handle',
+          title: 'Instagram',
           type: 'string',
+        },
+        {
+          name: 'fbHandle',
+          title: 'Facebook',
+          type: 'string',
+        },
+        {
+          name: 'email',
+          title: 'Email',
+          type: 'string',
+        },
+        {
+          name: 'phoneHandle',
+          title: 'Telefone',
+          type: 'string',
+        },
+        {
+          name: 'saldo',
+          title: 'Saldo',
+          type: 'number',
+        },
+        {
+          name: 'saldoUsado',
+          title: 'Saldo Usado',
+          type: 'number',
         },
       ],
     },
     {
       name: 'marketItems',
-      title: 'Market Items',
+      title: 'Coleções',
       type: 'document',
       fields: [
         {
           name: 'title',
-          title: 'Title',
+          title: 'Título',
+          type: 'string',
+        },
+        {
+          name: 'tokenName',
+          title: 'Nome dos Tokens',
+          type: 'string',
+        },
+        {
+          name: 'tag',
+          title: 'Tag',
+          type: 'string',
+        },
+        {
+          name: 'symbol',
+          title: 'Símbolo',
           type: 'string',
         },
         {
           name: 'contractAddress',
-          title: 'Contract Address',
+          title: 'Endereço do Contrato',
           type: 'string',
         },
         {
           name: 'description',
-          title: 'Description',
+          title: 'Descrição',
           type: 'string',
         },
         {
           name: 'createdBy',
-          title: 'Created By',
+          title: 'Criado Por',
           type: 'reference',
           to: [{ type: 'users' }],
         },
         {
           name: 'volumeTraded',
-          title: 'Volume Traded',
+          title: 'Volume Negociado',
           type: 'number',
         },
         {
           name: 'floorPrice',
-          title: 'Floor Price',
+          title: 'Preço mais baixo',
           type: 'number',
         },
         {
-          name: 'owners',
-          title: 'Owners',
-          type: 'array',
-          of: [{ type: 'reference', to: [{ type: 'users' }] }],
-        },
-        {
           name: 'profileImage',
-          title: 'Profile Image',
-          type: 'image',
+          title: 'Imagem de Perfil',
+          type: 'string',
         },
         {
           name: 'bannerImage',
-          title: 'Banner Image',
-          type: 'image',
+          title: 'Imagem do Banner',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'marketTokens',
+      title: 'Tokens',
+      type: 'document',
+      fields: [
+        {
+          name: 'contractAddress',
+          title: 'Endereço do Contrato',
+          type: 'string',
+        },
+        {
+          name: 'url',
+          title: 'Url',
+          type: 'string',
+        },
+        {
+          name: 'tokenId',
+          title: 'ID do Token',
+          type: 'number'
+        },
+        {
+          name: 'createdBy',
+          title: 'Criado Por',
+          type: 'reference',
+          to: [{ type: 'users' }],
+        },
+        {
+          name: 'collection',
+          title: 'Coleção',
+          type: 'reference',
+          to: [{ type: 'marketItems' }],
+        },
+        {
+          name: 'owner',
+          title: 'Holder',
+          type: 'reference',
+          to: [{ type: 'users' }],
+        },
+        {
+          name: 'internalOwner',
+          title: 'Dono Interno',
+          type: 'reference',
+          to: [{ type: 'users' }],
+        },
+        {
+          name: 'onMarketplace',
+          title: 'No Marketplace',
+          type: 'string'
+        },
+        {
+          name: 'type',
+          title: 'Tipo',
+          type: 'string'
+        },
+        {
+          name: 'sold',
+          title: 'Vendido',
+          type: 'string'
+        },
+        {
+          name: 'price',
+          title: 'Preço',
+          type: 'number'
+        },
+        {
+          name: 'minBid',
+          title: 'Lance Mínimo',
+          type: 'number'
+        },
+      ],
+    },
+    {
+      name: 'favorites',
+      title: 'Favoritos',
+      type: 'document',
+      fields: [
+        {
+          name: 'contractAddress',
+          title: 'Endereço do Contrato',
+          type: 'string',
+        },
+        {
+          name: 'tokenId',
+          title: 'Token',
+          type: 'string',
+        },
+        {
+          name: 'user',
+          title: 'Usuário',
+          type: 'reference',
+          to: [{ type: 'users' }],
         },
       ],
     },

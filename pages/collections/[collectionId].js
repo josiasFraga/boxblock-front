@@ -76,7 +76,6 @@ const Collection = () => {
       contractAddress,
       "creator": createdBy->userName,
       title, floorPrice,
-      "allOwners": owners[]->,
       description
     }`
 

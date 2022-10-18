@@ -2,51 +2,52 @@ import { useEffect, useState } from 'react'
 import Router from 'next/router'
 
 import { BiHeart } from 'react-icons/bi'
-
 import { style } from './NFTCard.style.js'
+import { ethers } from 'ethers'
 
-
-const NFTCard = ({ nftItem, title, listings }) => {
-  const [isListed, setIsListed] = useState(false)
-  const [price, setPrice] = useState(0)
-
-  useEffect(() => {
-    const listing = listings.find((listing) => listing.asset.id === nftItem.id)
-    if (Boolean(listing)) {
-      setIsListed(true)
-      setPrice(listing.buyoutCurrencyValuePerToken.displayValue)
-    }
-  }, [listings, nftItem])
-
+const NFTCard = ({ nftItem, name, title }) => {
   return (
     <div
       className={style.wrapper}
       onClick={() => {
         Router.push({
-          pathname: `/nfts/${nftItem.id}`,
-          query: { isListed: isListed },
+          pathname: `/nft/${nftItem.contractAddress}/${nftItem.tokenId}`,
+          //query: { isListed: isListed },
         })
       }}
     >
       <div className={style.imgContainer}>
-        <img src={nftItem.image} alt={nftItem.name} className={style.nftImg} />
+        <img src={nftItem.url} alt={name} className={style.nftImg} />
       </div>
       <div className={style.details}>
         <div className={style.info}>
           <div className={style.infoLeft}>
             <div className={style.collectionName}>{title}</div>
-            <div className={style.assetName}>{nftItem.name}</div>
+            <div className={style.assetName}>{name} #{nftItem.tokenId}</div>
           </div>
-          {isListed && (
+          {nftItem.onMarketplace == "Y" && nftItem.sold == "N" && nftItem.type == "list" && (
             <div className={style.infoRight}>
-              <div className={style.priceTag}>Price</div>
+              <div className={style.priceTag}>Preço</div>
               <div className={style.priceValue}>
                 <img
-                  src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
+                  src="https://ethereum.org/static/6b935ac0e6194247347855dc3d328e83/6ed5f/eth-diamond-black.webp"
                   alt="eth"
                   className={style.ethLogo}
                 />
-                {price}
+                {nftItem.price}
+              </div>
+            </div>
+          )}
+          {nftItem.onMarketplace == "Y" && nftItem.sold == "N" && nftItem.type == "auction" && (
+            <div className={style.infoRight}>
+              <div className={style.priceTag}>Lance Atual</div>
+              <div className={style.priceValue}>
+                <img
+                  src="https://ethereum.org/static/6b935ac0e6194247347855dc3d328e83/6ed5f/eth-diamond-black.webp"
+                  alt="eth"
+                  className={style.ethLogo}
+                />
+                {parseFloat(nftItem.price) + parseFloat(nftItem.minBid)}
               </div>
             </div>
           )}

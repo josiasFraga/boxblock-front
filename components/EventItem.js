@@ -10,11 +10,11 @@ const EventItem = ({ event }) => {
         <div className={style.eventIcon}>
           <BsFillCartFill />
         </div>
-        <div className={style.eventName}>Sale</div>
+        <div className={style.eventName}>{event.event}</div>
       </div>
-      <div className={`${style.eventPrice} flex-[2]`}>
+      <div className={`${style.eventPrice} flex-[2] items-center justfy-center`}>
         <img
-          src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg"
+          src="https://ethereum.org/static/6b935ac0e6194247347855dc3d328e83/6ed5f/eth-diamond-black.webp"
           alt="eth"
           className={style.ethLogo}
         />
@@ -22,7 +22,7 @@ const EventItem = ({ event }) => {
       </div>
       <div className={`${style.accent} flex-[3]`}>{event.from}</div>
       <div className={`${style.accent} flex-[3]`}>{event.to}</div>
-      <div className={`${style.accent} flex-[2]`}>{event.date}</div>
+      <div className={`${style.accent} flex-[2] text-center`}>{event.date}</div>
     </div>
   )
 }

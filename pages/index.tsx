@@ -1,13 +1,14 @@
-import { useEffect } from 'react'
+
+import { useEffect, useState } from 'react'
+
 import type { NextPage } from 'next'
 import toast, { Toaster } from 'react-hot-toast'
-
-import { useWeb3 } from '@3rdweb/hooks'
-import { client } from '../lib/sanityClient.js'
+//import bgHeader from '../assets/images/bg_header.png'
 
 import Header from '../components/Header.js'
-import Hero from '../components/Hero.js'
-
+import Footer from '../components/Footer.js'
+import MainHome from '../components/MainHome.js'
+import MainHomeUser from '../components/MainHomeUser.js'
 
 const style = {
   wrapper: ``,
@@ -17,56 +18,27 @@ const style = {
 }
 
 const Home: NextPage = () => {
-  const { address, connectWallet } = useWeb3()
 
-  const welcomeUser = (userName = '', toastHandler = toast) => {
-    toastHandler.success(
-      `Welcome back${userName !== 'Unnamed' ? ` ${userName}` : ''}!`,
-      {
-        style: {
-          background: '#04111d',
-          color: '#fff',
-        },
+  const [userCpf, setUserCpf] = useState("")
+
+  useEffect(function() {
+      const us_cpf = window.localStorage.getItem("us_cpf");
+      if ( us_cpf ){
+          setUserCpf(us_cpf);
       }
-    )
-  }
-
-  useEffect(() => {
-    if (!address) return
-    ;(async () => {
-      const userDoc = {
-        _type: 'users',
-        _id: address,
-        userName: 'Unnamed',
-        walletAddress: address,
-      }
-
-      const result = await client.createIfNotExists(userDoc)
-      welcomeUser(result.userName)
-    })()
-  }, [address])
+  },[]);
 
   return (
-    <div className={style.wrapper}>
-      <Toaster position="top-center" reverseOrder={false} />
-      {address ? (
-        <>
+    <div className='h-auto min-h-screen' style={{backgroundColor: "#fff"}}>
+        <Toaster position="top-center" reverseOrder={false} />
+        <div className="min-h-screen flex flex-col">
           <Header />
-          <Hero />
-        </>
-      ) : (
-        <div className={style.walletConnectWrapper}>
-          <button
-            className={style.button}
-            onClick={() => connectWallet('injected')}
-          >
-            Connect Wallet
-          </button>
-          <div className={style.details}>
-            You need Chrome to be able to run this app.
+          {userCpf == "" && <MainHome />}
+          {userCpf != "" && <MainHomeUser cpf={userCpf} />}
+          <div className='flex flex-1 flex-col justify-end'>
+              <Footer />
           </div>
         </div>
-      )}
     </div>
   )
 }

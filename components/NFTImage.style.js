@@ -1,5 +1,5 @@
 export const style = {
-  topBar: `bg-[#303339] p-2 rounded-t-lg border-[#151c22] border mb-2`,
-  topBarContent: `flex items-center`,
-  likesCounter: `flex-1 flex items-center justify-end`,
+  topBar: `bg-[#fff] p-2 rounded-t-lg border-[#ddd] border mb-2`,
+  topBarContent: `flex items-center text-[#8a939b]`,
+  likesCounter: `flex-1 flex items-center justify-end text-[#8a939b]`,
 }

@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "opensea-clone"
-  },
   "api": {
-    "projectId": "bapkmvpq",
+    "projectId": "oqf350p5",
     "dataset": "production"
+  },
+  "project": {
+    "name": "boxblock"
   },
   "plugins": [
     "@sanity/base",
