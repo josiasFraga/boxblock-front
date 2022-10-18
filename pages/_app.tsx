@@ -9,6 +9,7 @@ const supportedChainIds = [1, 4, 137, 1337]
 const connectors = { injected: {} }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const AnyComponent = Component as any;
   return (
 
     <ThirdwebWeb3Provider
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       connectors={connectors}
     >
 
-      <Component {...pageProps} />
+      <AnyComponent {...pageProps} />
     </ThirdwebWeb3Provider>
   )
 }

@@ -16,7 +16,7 @@ import { ethers } from 'ethers'
 
 import SliderNfts from '../../../components/SliderNfts.js'
 
-import { style } from './styles.js'
+import { style } from '../../../components/Styles/Nft/styles.js'
 
 import {
   marketplaceAddress

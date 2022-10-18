@@ -3,9 +3,9 @@ import { client } from '../../lib/sanityClient.js'
 
 import Header from '../../components/Header.js'
 import Footer from '../../components/Footer.js'
-import ImageProfile from './Index/ImageProfile'
-import InfoProfile from './Index/InfoProfile'
-import NftsProfile from './Index/NftsProfile'
+import ImageProfile from '../../components/Pages/Perfil/ImageProfile'
+import InfoProfile from '../../components/Pages/Perfil/InfoProfile'
+import NftsProfile from '../../components/Pages/Perfil/NftsProfile'
 
 const Perfil = () => {
     const [userInfo, setUserInfo] = useState({});

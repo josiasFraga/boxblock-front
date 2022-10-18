@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import {DropzoneArea} from 'material-ui-dropzone'
 
 import Header from '../../components/Header.js'
-import FormCollection from './criar/FromCollection.js'
+import FormCollection from '../../components/Pages/Colecoes/Criar/FromCollection.js'
 import ImageRadio from '../../components/ImageRadio'
 import { client } from '../../lib/sanityClient.js'
 import { Photo } from '@material-ui/icons';
@@ -30,7 +30,7 @@ import BoxBlockNFTFactory from '../../artifacts/contracts/BoxBlock.sol/BoxBlockN
 import BoxBlockNFTMarketplace from '../../artifacts/contracts/BoxBlock.sol/BoxBlockNFTMarketplace.json'
 
 import toast from 'react-hot-toast';
-import { style } from './styles.js'
+import { style } from '../../components/Styles/Colecoes/styles.js'
 
 const providerOptions = {
 };

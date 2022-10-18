@@ -10,7 +10,7 @@ import GeneralDetails from '../../components/GeneralDetails.js'
 import ItemActivity from '../../components/ItemActivity.js'
 import Purchase from '../../components/Purchase.js'
 
-import { style } from './styles.js'
+import { style } from '../../components/Styles/Nfts/styles.js'
 
 
 const Nft = () => {

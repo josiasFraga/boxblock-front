@@ -14,7 +14,7 @@ import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
 import { CgWebsite } from 'react-icons/cg'
 
-import { style } from './styles.js'
+import { style } from '../../components/Styles/Colecao/styles.js'
 
 import BoxBlockNFT from '../../artifacts/contracts/BoxBlock.sol/BoxBlockNFT.json'
 import BoxBlockNFTMarketplace from '../../artifacts/contracts/BoxBlock.sol/BoxBlockNFTMarketplace.json'

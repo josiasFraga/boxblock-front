@@ -14,7 +14,7 @@ import { HiDotsVertical } from 'react-icons/hi'
 import { CgWebsite } from 'react-icons/cg'
 
 
-import { style } from './styles.js'
+import { style } from '../../components/Styles/Colecoes/styles.js'
 
 const Collection = () => {
   const router = useRouter()

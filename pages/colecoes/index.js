@@ -5,8 +5,6 @@ import CollectionCard from '../../components/CollectionCard.js'
 import Header from '../../components/Header.js'
 import { client } from '../../lib/sanityClient.js'
 
-import { style } from './styles.js'
-
 const Colecoes = () => {
 
   const [listings, setListings] = useState([])
