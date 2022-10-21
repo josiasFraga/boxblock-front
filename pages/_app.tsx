@@ -4,8 +4,8 @@ import { ThirdwebWeb3Provider } from '@3rdweb/hooks'
 
 import '../styles/globals.css'
 
-
-const supportedChainIds = [1, 4, 137, 1337]
+//const supportedChainIds = [1, 4, 137, 1337];
+const supportedChainIds = [5];
 const connectors = { injected: {} }
 
 function MyApp({ Component, pageProps }: AppProps) {

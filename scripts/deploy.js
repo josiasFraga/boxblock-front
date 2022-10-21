@@ -8,7 +8,7 @@ async function main() {
   const [deployer] = await ethers.getSigners()
 
   const platformFee = 1000; //(10000 = 10%)
-  const platform_wallet = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
+  const platform_wallet = "0x38291D26cF58b36b8FC98Eb5c16F556322283fBB";
 
   /* deploy the bloxblockfactory */
   const BoxBlockNFTFactory = await hre.ethers.getContractFactory("BoxBlockNFTFactory");
