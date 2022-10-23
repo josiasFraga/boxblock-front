@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Modal, Spinner } from "flowbite-react";
 import { client } from '../../lib/sanityClient.js'
+import { useRouter } from 'next/router';
 
 const ModalShowNft = ({ show, setShow, nftToShow, setNftToShow }) => {
 
+    const router = useRouter();
 
     const [nftInfo, setNftInfo] = useState({})
 
@@ -32,6 +34,9 @@ const ModalShowNft = ({ show, setShow, nftToShow, setNftToShow }) => {
         <Modal show={show} size="md" popup={true} onClose={() => {
                 setNftToShow("");
                 setNftInfo({});
+                router.push({
+                    pathname: `/perfil`,
+                });
             }}>
             <Modal.Header />
             <Modal.Body>
