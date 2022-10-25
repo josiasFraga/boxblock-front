@@ -35,6 +35,7 @@ const ImageProfile = (props) => {
     const uploadImage = async(image) => {
       console.log("uploading image");
       let { url } = await uploadToS3(image);
+      url = url.replace("boxblock-collections.boxblock-collections", "boxblock-collections")
       console.log("image uploaded");
       return url;
     }
