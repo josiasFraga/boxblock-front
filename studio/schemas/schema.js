@@ -46,6 +46,11 @@ export default createSchema({
           type: 'string',
         },
         {
+          name: 'tiktokHandle',
+          title: 'TikTok',
+          type: 'string',
+        },
+        {
           name: 'email',
           title: 'Email',
           type: 'string',
@@ -64,6 +69,21 @@ export default createSchema({
           name: 'saldoUsado',
           title: 'Saldo Usado',
           type: 'number',
+        },
+        {
+          name: 'senha',
+          title: 'Senha',
+          type: 'string',
+        },
+        {
+          name: 'receivePromotionEmail',
+          title: 'Receber Promoção por Email',
+          type: 'string',
+        },
+        {
+          name: 'receivePromotionPhone',
+          title: 'Receber Promoção por Telefone',
+          type: 'string',
         },
       ],
     },

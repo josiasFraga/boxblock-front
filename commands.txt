@@ -12,3 +12,6 @@ npx hardhat node
 
 start
 sudo npm run dev
+
+sanity
+cd studio; sanity start;

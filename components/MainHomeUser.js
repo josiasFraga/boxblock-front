@@ -4,28 +4,47 @@ import { client } from '../lib/sanityClient.js'
 import ModalMintNft from './MainHomeUser/ModalMintNft'
 import ModalShowNft from './MainHomeUser/ModalShowNft'
 
+import ModalChangeUserInfo from './ModalChangeUserInfo';
+
 const MainHomeUser = (props) => {
+
     const [userInfo, setUserInfo] = useState({})
     const [nftToShow, setNftToShow] = useState("")
     const [showNodalMintNft, setShowModalMintNft] = useState(false)
     const [showNodalShowNft, setShowNodalShowNft] = useState(true)
+    const [showModalSetPassword, setShowModalSetPassword] = useState(false)
+    const [changing, setChanging] = useState("password");
+
     let userCpf = props.cpf;
 
     const fetchUserInfo = async (sanityClient = client) => {
       const query = `*[_type == "users" && _id == "${userCpf}"] {
+        _id,
         userName,
         walletAddress,
         saldo,
+        senha,
       }`
   
-      const userInfo = await sanityClient.fetch(query)
+      const user_Info = await sanityClient.fetch(query)
   
-      setUserInfo(userInfo[0]);
+      setUserInfo(user_Info[0]);
     }
 
     useEffect(function() {
         fetchUserInfo();
     },[]);
+
+    useEffect(function() {
+        if ( typeof(userInfo.senha) != "undefined" && (userInfo.senha == null || userInfo.senha == "") ) {
+            setShowModalSetPassword(true);
+        }
+    
+        if ( typeof(userInfo.senha) != "undefined" && userInfo.senha != null && userInfo.userName == "Sem Nome" ) {
+            setChanging("wizard");
+            setShowModalSetPassword(true);
+        }
+    },[userInfo]);
 
     useEffect(function() {
         if (nftToShow == "" && showNodalShowNft) {
@@ -42,6 +61,7 @@ const MainHomeUser = (props) => {
 
         <ModalMintNft setShow={setShowModalMintNft} show={showNodalMintNft} cpf={userCpf} setNftToShow={setNftToShow} />
         <ModalShowNft setShow={setShowNodalShowNft} show={showNodalShowNft} nftToShow={nftToShow} setNftToShow={setNftToShow} />
+        <ModalChangeUserInfo setShow={setShowModalSetPassword} changing={changing} show={showModalSetPassword} user={userInfo} />
 
         <div className='flex flex-1 justfy-center flex-col items-center mt-6'>
             <div className='container flex flex-col mx-auto'>

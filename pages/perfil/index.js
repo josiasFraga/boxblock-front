@@ -31,6 +31,8 @@ const Perfil = () => {
             profileImage,
             igHandle,
             fbHandle,
+            tiktokHandle,
+            twitterHandle,
             phoneHandle,
             email,
             "nfts": *[_type=="marketTokens" && references(^._id)] {
