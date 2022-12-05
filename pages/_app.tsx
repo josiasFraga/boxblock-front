@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { ThirdwebWeb3Provider } from '@3rdweb/hooks'
+import Head from 'next/head'
 
 import '../styles/globals.css'
 
@@ -16,6 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       supportedChainIds={supportedChainIds}
       connectors={connectors}
     >
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+      </Head>
 
       <AnyComponent {...pageProps} />
     </ThirdwebWeb3Provider>
