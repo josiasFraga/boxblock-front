@@ -56,19 +56,19 @@ const InfoProfile = (props) => {
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <BsFacebook size={25} />
                         </div>
-                        <div>{user?.igHandle == null ? "Informar Facebook" : user?.fbHandle}</div>
+                        <div>{user?.fbHandle == null ? "Informar Facebook" : user?.fbHandle}</div>
                     </div>
                     <div className="flex flex-row py-2 cursor-pointer" onClick={() => openModal("tiktok")}>
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <FaTiktok style={{backgroundColor: "#000", color: "#FFF", padding: 5, borderRadius: "100%", fontSize: 10}}  size={25} />
                         </div>
-                        <div>{user?.igHandle == null ? "Informar Tiktok" : user?.tiktokHandle}</div>
+                        <div>{user?.tiktokHandle == null ? "Informar Tiktok" : user?.tiktokHandle}</div>
                     </div>
                     <div className="flex flex-row py-2 cursor-pointer" onClick={() => openModal("twitter")}>
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <FaTwitter style={{backgroundColor: "#000", color: "#FFF", padding: 5, borderRadius: "100%", fontSize: 10}}  size={25} />
                         </div>
-                        <div>{user?.igHandle == null ? "Informar Twitter" : user?.twitterHandle}</div>
+                        <div>{user?.twitterHandle == null ? "Informar Twitter" : user?.twitterHandle}</div>
                     </div>
                 </div>
             </div>

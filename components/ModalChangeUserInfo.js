@@ -194,8 +194,14 @@ const ModalChangeUserInfo = ({ show, setShow, changing, user }) => {
         .commit();
 
         if ( changing == "wizard" ) {
+    
+            let new_saldo = 50;
+            if ( user.saldo != null ) {
+                new_saldo = parseFloat(user.saldo) + 50;
+            }
+        
             result = await sanityClient.patch(user._id) // Document ID to patch
-            .set({"saldo": parseFloat(user.saldo) + 50 }) // Shallow merge
+            .set({"saldo":  new_saldo}) // Shallow merge
             .commit();
         }
         console.log("nome do usuário atualizado");
