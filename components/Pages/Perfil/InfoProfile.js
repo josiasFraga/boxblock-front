@@ -38,37 +38,37 @@ const InfoProfile = (props) => {
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <MdMailOutline style={{backgroundColor: "#000", color: "#FFF", padding: 5, borderRadius: "100%", fontSize: 10}}  size={25}/>
                         </div>
-                        <div>{user?.email == null ? "Informar Email" : user?.email}</div>
+                        <div>{user?.email == null ? "Informar Email" || user?.email == "" : user?.email}</div>
                     </div>
                     <div className="flex flex-row py-2 cursor-pointer" onClick={() => openModal("phone")}>
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <MdOutlineCall style={{backgroundColor: "#000", color: "#FFF", padding: 5, borderRadius: "100%", fontSize: 10}}  size={25} />
                         </div>
-                        <div>{user?.phoneHandle == null ? "Informar Telefone" : user?.phoneHandle}</div>
+                        <div>{user?.phoneHandle == null || user?.phoneHandle == "" ? "Informar Telefone" : user?.phoneHandle}</div>
                     </div>
                     <div className="flex flex-row py-2 cursor-pointer" onClick={() => openModal("instagram")}>
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <FaInstagram style={{backgroundColor: "#000", color: "#FFF", padding: 5, borderRadius: "100%", fontSize: 10}}  size={25} />
                         </div>
-                        <div>{user?.igHandle == null ? "Informar Instagram" : user?.igHandle}</div>
+                        <div>{user?.igHandle == null || user?.igHandle == "" ? "Informar Instagram" : user?.igHandle}</div>
                     </div>
                     <div className="flex flex-row py-2 cursor-pointer" onClick={() => openModal("facebook")}>
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <BsFacebook size={25} />
                         </div>
-                        <div>{user?.fbHandle == null ? "Informar Facebook" : user?.fbHandle}</div>
+                        <div>{user?.fbHandle == null || user?.fbHandle == "" ? "Informar Facebook" : user?.fbHandle}</div>
                     </div>
                     <div className="flex flex-row py-2 cursor-pointer" onClick={() => openModal("tiktok")}>
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <FaTiktok style={{backgroundColor: "#000", color: "#FFF", padding: 5, borderRadius: "100%", fontSize: 10}}  size={25} />
                         </div>
-                        <div>{user?.tiktokHandle == null ? "Informar Tiktok" : user?.tiktokHandle}</div>
+                        <div>{user?.tiktokHandle == null ? "Informar Tiktok" || user?.tiktokHandle == "" : user?.tiktokHandle}</div>
                     </div>
                     <div className="flex flex-row py-2 cursor-pointer" onClick={() => openModal("twitter")}>
                         <div className="flex justify-center items-center mr-2 text-xl">
                             <FaTwitter style={{backgroundColor: "#000", color: "#FFF", padding: 5, borderRadius: "100%", fontSize: 10}}  size={25} />
                         </div>
-                        <div>{user?.twitterHandle == null ? "Informar Twitter" : user?.twitterHandle}</div>
+                        <div>{user?.twitterHandle == null || user?.twitterHandle == "" ? "Informar Twitter" : user?.twitterHandle}</div>
                     </div>
                 </div>
             </div>
