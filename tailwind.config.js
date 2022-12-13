@@ -14,7 +14,13 @@ module.exports = {
       sora: ['"Sora"', 'sans-serif'],
       inter: ['"Inter"', 'sans-serif'],
       epilogue: ['"Epilogue"', 'sans-serif'],
-    }
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'primary': '#00a88f',
+      'primary-dark': '#056758',
+    },
   },
   plugins: [
     require('flowbite/plugin'),

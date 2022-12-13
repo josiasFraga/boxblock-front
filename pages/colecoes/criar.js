@@ -687,7 +687,7 @@ const Criar = (props) => {
               </>
               }
 
-              <button onClick={formik.handleSubmit} disabled={formik.isSubmitting} className="font-bold mt-4 bg-blue-500 hover:bg-blue-700 text-white rounded p-4 shadow-lg">
+              <button onClick={formik.handleSubmit} disabled={formik.isSubmitting} className="font-bold mt-4 bg-primary hover:bg-primary-dark text-white rounded p-4 shadow-lg">
                 Enviar
               </button>
           </div>

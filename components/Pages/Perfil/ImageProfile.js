@@ -4,6 +4,7 @@ import { useS3Upload } from 'next-s3-upload';
 
 import { client } from '../../../lib/sanityClient.js'
 import noProfilePhoto from '../../../assets/images/no_profile_photo.png'
+import profileBg from '../../../assets/images/profile_bg.jpg'
 import Router from 'next/router'
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -42,9 +43,15 @@ const ImageProfile = (props) => {
 
     return (
         <div>
-            <div className="w-full h-32 bg-blue-700 mb-12">
+            <div className="w-full h-32 mb-12">
                 <Toaster position="top-right" reverseOrder={false} />
-                <div className='relative w-full h-full'>
+                <div className='relative w-full h-full' 
+                    style={{
+                        backgroundImage: `url(${profileBg.src})`,
+                        backgroundPosition: "center center",
+                        backgroundSize: "100% auto",
+                        backgroundRepeat: "no-repeat"
+                    }}>
                     <div className='absolute ' style={{marginLeft: "-50px", left: "50%", bottom: "-50px"}} onClick={()=>{
                         inputFile.current.click();
                     }}>

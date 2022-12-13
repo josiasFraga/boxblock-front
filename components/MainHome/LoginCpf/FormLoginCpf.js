@@ -33,6 +33,7 @@ const FormLoginCpf = () => {
                 _id: values.cpf,
                 userName: 'Sem Nome',
                 walletAddress: "",
+                saldo: 600,
             }
         
             const result = await client.createIfNotExists(userDoc)
@@ -73,7 +74,7 @@ const FormLoginCpf = () => {
 
             <div className='mt-16'>
 
-                <button type='button' onClick={formik.handleSubmit} disabled={formik.isSubmitting} className="bg-blue-700 w-full hover:bg-blue-900 text-white font-bold py-4 px-4 border border-blue-700 rounded">
+                <button type='button' onClick={formik.handleSubmit} disabled={formik.isSubmitting} className="bg-primary w-full hover:bg-primary-dark text-white font-bold py-4 px-4 border border-primary rounded">
                 Registrar
                 </button>
 

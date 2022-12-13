@@ -7,7 +7,7 @@ import 'react-block-ui/style.css';
 import Router from 'next/router'
 import toast, { Toaster } from 'react-hot-toast'
 import { client } from '../lib/sanityClient.js'
-import winPoints from '../assets/images/win_points.png'
+import winPoints from '../assets/images/win_points.gif'
 import Image from 'next/image'
 
 import { BsFacebook } from 'react-icons/bs'
@@ -517,7 +517,7 @@ const ModalChangeUserInfo = ({ show, setShow, changing, user }) => {
                 {
                     changing == "wizard" && step == 1 && 
                     <div className="mb-4 block text-center">    
-                        <Image src={winPoints} height={210} width={150} />
+                        <Image src={winPoints} height={240} width={320} />
                         <h4>Você ganhou +50 pontos!</h4>
                     </div>
                 }
@@ -747,7 +747,7 @@ const ModalChangeUserInfo = ({ show, setShow, changing, user }) => {
                     <div className="w-full pt-4 flex flex-1">
         
                         <button 
-                            className="bg-blue-700 w-full hover:bg-blue-900 disabled:bg-gray-500 disabled:border-gray-500 text-white font-bold py-2 px-4 border border-blue-700 rounded flex-row flex items-center justify-center flex-1"
+                            className="bg-primary w-full hover:bg-primary-dark disabled:bg-gray-500 disabled:border-gray-500 text-white font-bold py-2 px-4 border border-primary rounded flex-row flex items-center justify-center flex-1"
                             onClick={formik.handleSubmit} 
                             disabled={formik.isSubmitting}>{confirm_text}</button>
                     </div>
@@ -777,7 +777,7 @@ const ModalChangeUserInfo = ({ show, setShow, changing, user }) => {
                                 setStep(0);
                                 setShow(false)
                             }}
-                            className="text-blue-700 hover:underline dark:text-blue-500 cursor-pointer pt-2 pb-2 w-full text-center"
+                            className="text-primary hover:text-primary-dark dark:text-blue-500 cursor-pointer pt-2 pb-2 w-full text-center"
                             >
                             Fechar
                         </a>

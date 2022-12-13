@@ -75,7 +75,7 @@ const MainHomeUser = (props) => {
 
                 <div className='mt-16'>
 
-                    <button type='button' onClick={()=>{ setShowModalMintNft(true); }} disabled={userInfo.saldo == null || parseInt(userInfo.saldo) < 300 } className="bg-blue-700 w-full hover:bg-blue-900 disabled:bg-gray-500 disabled:border-gray-500 text-white font-bold py-4 px-4 border border-blue-700 rounded">
+                    <button type='button' onClick={()=>{ setShowModalMintNft(true); }} disabled={userInfo.saldo == null || parseInt(userInfo.saldo) < 300 } className="bg-primary w-full hover:bg-bg-primary-dark disabled:bg-gray-500 disabled:border-gray-500 text-white font-bold py-4 px-4 border border-primary rounded">
                     Cunhar NFT
                     </button>
                     <p className='text-center mt-2'>Serão necessários 300 pontos</p>

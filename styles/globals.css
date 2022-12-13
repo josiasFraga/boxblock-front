@@ -59,3 +59,11 @@ a {
 }
 
 .slick-prev:before, .slick-next:before{color: #060714 !important;}
+nav div div ul li a{ color: #00a88f !important;}
+nav div div ul li a.bg-blue-700, nav div div ul li a:hover { color: #056758 !important; }
+
+@media screen and (min-width: 667px) {
+  nav div div ul li a{ color: #00a88f !important;}
+  nav div div ul li a.bg-blue-700, nav div div ul li a.bg-blue-700:hover { color: #fff !important; background-color: #00a88f; }
+  nav div div ul li a:hover{ color: #056758 !important; }
+}

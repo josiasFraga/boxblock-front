@@ -111,7 +111,7 @@ const ModalMintNft = ({ show, setShow, cpf, setNftToShow }) => {
 
             <div className="w-full flex">
                 <div className="w-full">
-                    <button className="bg-blue-700 w-full hover:bg-blue-900 disabled:bg-gray-500 disabled:border-gray-500 text-white font-bold py-4 px-4 border border-blue-700 rounded flex-row flex items-center justify-center" onClick={()=>{}} disabled={false}>
+                    <button className="bg-primary w-full hover:bg-primary-dark disabled:bg-gray-500 disabled:border-gray-500 text-white font-bold py-4 px-4 border border-primary rounded flex-row flex items-center justify-center" onClick={()=>{}} disabled={false}>
                         <div className="mr-3">
                             <Spinner
                                 size="sm"

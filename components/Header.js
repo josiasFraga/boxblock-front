@@ -102,10 +102,16 @@ const Header = () => {
         >
           Página Inicial
         </Navbar.Link>
-        <Navbar.Link href="/perfil" active={router.pathname == "/perfil"}>
+        <Navbar.Link 
+          href="/perfil" 
+          active={router.pathname == "/perfil"} 
+        >
           Perfil
         </Navbar.Link>
-        <Navbar.Link href="/sair" active={router.pathname == "/sair"}>
+        <Navbar.Link 
+          href="/sair" 
+          active={router.pathname == "/sair"} 
+        >
           Sair
         </Navbar.Link>
       </Navbar.Collapse>
