@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Modal, Spinner } from "flowbite-react";
 import { client } from '../../lib/sanityClient.js'
 import { useRouter } from 'next/router';
+import { AiFillStar } from 'react-icons/ai';
 
 const ModalShowNft = ({ show, setShow, nftToShow, setNftToShow }) => {
 
