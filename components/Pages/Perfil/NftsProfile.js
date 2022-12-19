@@ -1,3 +1,4 @@
+import { AiFillStar } from 'react-icons/ai';
 const NftsProfile = (props) => {
     const nfts = props.nfts;
 
@@ -16,6 +17,14 @@ const NftsProfile = (props) => {
                             <h4 className="text-lg text-gray-900 dark:text-white font-sora mt-4">
                                 {nft.collectionNftName} #{nft.tokenId}
                             </h4>
+                            <div className='flex justify-end w-full flex-col text-xs'>
+                                <div className='flex justify-end w-full flex-row w-20 justify-center self-end'>
+                                    <AiFillStar color="#ffea00" size={25} />
+                                </div>
+                                <div className='flex justify-end w-full flex-row w-20 justify-center self-end'>
+                                    Comum
+                                </div>
+                            </div>
                         </div>
                         )
                     })}
